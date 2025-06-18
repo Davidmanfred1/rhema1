@@ -1,0 +1,22 @@
+This directory should contain the following images:
+
+1. logo.png - Church logo
+2. hero.jpg - Hero image for the homepage
+3. a.jpeg - Sunday Service event image
+4. I.jpg - Weekly sermon image
+5. bishop.jpg - Bible study image
+6. power.jpg - Praise & Worship image
+7. worship.jpg - Gallery image
+8. graduation.jpg - Gallery image
+9. great.jpg - Gallery image
+10. lift.jpg - Gallery image
+11. photo_2025-04-06_04-55-03.jpg - Gallery image
+12. photo_2025-04-06_04-55-09.jpg - Gallery image
+13. church.jpg - Church building image for About section
+14. book1.jpg - Book cover for "The Purpose Driven Life"
+15. book2.jpg - Book cover for "Battlefield of the Mind"
+16. book3.jpg - Book cover for "Mere Christianity"
+17. book4.jpg - Book cover for "The Case for Christ"
+18. default-book.jpg - Default book cover image
+
+These images should be added to complete the website.
