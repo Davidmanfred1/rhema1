@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to Rhema Calvary Center - A place of worship, community, and spiritual growth">
+    <meta name="keywords" content="church, worship, community, spiritual growth, Rhema Calvary Center, religious services">
+    <meta name="author" content="Rhema Calvary Center">
+    <meta property="og:title" content="Rhema Calvary Center">
+    <meta property="og:description" content="Welcome to Rhema Calvary Center - A place of worship, community, and spiritual growth">
+    <meta property="og:image" content="https://rhemacalvarycenter.com/images/hero.jpg">
+    <meta property="og:url" content="https://rhemacalvarycenter.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://rhemacalvarycenter.com">
+    <title>Rhema Calvary Center - A Place of Worship and Spiritual Growth</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="enhanced-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body role="document">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="logo" role="banner"><img src="images/logo.png" alt="Rhema Calvary Center Church Logo">Rhema Calvary Center</div>
+        <div class="nav-links" role="menubar">
+            <a href="#home" class="active" role="menuitem" aria-current="page">Home</a>
+            <a href="#events" role="menuitem">Events</a>
+            <a href="#sermons" role="menuitem">Sermons</a>
+            <a href="store.html" role="menuitem">Store</a>
+            <a href="https://rhema.mychurchpay.com" role="menuitem" target="_blank" rel="noopener noreferrer">Giving</a>
+            <a href="#about" role="menuitem">About</a>
+            <a href="#contact" role="menuitem">Contact</a>
+        </div>
+        <div class="nav-right">
+            <div class="cart-icon" onclick="showCart()" aria-label="View shopping cart">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+            <button class="mobile-menu" aria-label="Toggle navigation menu" aria-expanded="false">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Discover Your Divine Purpose<br>at Rhema Calvary Center</h1>
+            <p class="hero-subtitle">Igniting Hearts, Transforming Lives</p>
+            <p class="hero-description">Step into a sanctuary of divine inspiration where every soul finds its purpose. Our vibrant community radiates with the warmth of genuine fellowship, powerful worship experiences, and life-changing messages that speak directly to your heart. Here at Rhema Calvary Center, your spiritual journey becomes a transformative adventure.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="cta-button primary">Begin Your Journey</a>
+                <a href="members.html" class="cta-button members">Member's Zone</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="images/hero.jpg" alt="Worship at Rhema Calvary Center" class="centered-image">
+        </div>
+    </section>
+
+    <section id="events" class="events-section" role="region" aria-label="Upcoming Events">
+        <h2>Upcoming Events</h2>
+        <div class="events-grid">
+            <div class="event-card" role="article">
+                <img src="images/a.jpeg" alt="Sunday Service at Rhema Calvary Center - A vibrant worship experience" loading="lazy">
+                <div class="event-info">
+                    <h3>Sunday Service</h3>
+                    <p>Every Sunday at 10:00 AM</p>
+                    <div class="social-interactions" role="group" aria-label="Social interaction buttons">
+                        <button class="like-btn" aria-label="Like this event"><i class="fas fa-heart" aria-hidden="true"></i> <span aria-live="polite">0 likes</span></button>
+                        <button class="share-btn" aria-label="Share this event"><i class="fas fa-share" aria-hidden="true"></i> Share</button>
+                        <button class="download-btn" aria-label="Download event details"><i class="fas fa-download" aria-hidden="true"></i> Download</button>
+                    </div>
+                    <div class="comments-section" role="region" aria-label="Comments section">
+                        <textarea placeholder="Add a comment..." aria-label="Write your comment here"></textarea>
+                        <button aria-label="Post comment">Post</button>
+                    </div>
+                </div>
+            </div>
+            <div class="event-card" role="article">
+                <img src="images/bishop.jpg" alt="Bible Study at Rhema Calvary Center" loading="lazy">
+                <div class="event-info">
+                    <h3>Bible Study</h3>
+                    <p>Every Wednesday at 7:00 PM</p>
+                    <div class="social-interactions" role="group" aria-label="Social interaction buttons">
+                        <button class="like-btn" aria-label="Like this event"><i class="fas fa-heart" aria-hidden="true"></i> <span aria-live="polite">0 likes</span></button>
+                        <button class="share-btn" aria-label="Share this event"><i class="fas fa-share" aria-hidden="true"></i> Share</button>
+                        <button class="download-btn" aria-label="Download event details"><i class="fas fa-download" aria-hidden="true"></i> Download</button>
+                    </div>
+                    <div class="comments-section" role="region" aria-label="Comments section">
+                        <textarea placeholder="Add a comment..." aria-label="Write your comment here"></textarea>
+                        <button aria-label="Post comment">Post</button>
+                    </div>
+                </div>
+            </div>
+            <div class="event-card" role="article">
+                <img src="images/power.jpg" alt="Prayer Meeting at Rhema Calvary Center" loading="lazy">
+                <div class="event-info">
+                    <h3>Prayer Meeting</h3>
+                    <p>Every Friday at 6:30 PM</p>
+                    <div class="social-interactions" role="group" aria-label="Social interaction buttons">
+                        <button class="like-btn" aria-label="Like this event"><i class="fas fa-heart" aria-hidden="true"></i> <span aria-live="polite">0 likes</span></button>
+                        <button class="share-btn" aria-label="Share this event"><i class="fas fa-share" aria-hidden="true"></i> Share</button>
+                        <button class="download-btn" aria-label="Download event details"><i class="fas fa-download" aria-hidden="true"></i> Download</button>
+                    </div>
+                    <div class="comments-section" role="region" aria-label="Comments section">
+                        <textarea placeholder="Add a comment..." aria-label="Write your comment here"></textarea>
+                        <button aria-label="Post comment">Post</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sermons" class="sermons-section" role="region" aria-labelledby="sermons-title">
+        <h2 id="sermons-title">Latest Sermons</h2>
+        <div class="sermons-grid">
+            <div class="sermon-card" role="article">
+                <img src="images/I.jpg" alt="Weekly sermon service at Rhema Calvary Center" loading="lazy">
+                <h3>Weekly Sermon</h3>
+                <p>Join us for spiritual growth and enlightenment every Sunday</p>
+                <div class="social-interactions" role="group" aria-label="Social interaction buttons">
+                    <button class="like-btn" aria-label="Like this sermon"><i class="fas fa-heart" aria-hidden="true"></i> <span aria-live="polite">0 likes</span></button>
+                    <button class="share-btn" aria-label="Share this sermon"><i class="fas fa-share" aria-hidden="true"></i> Share</button>
+                    <button class="download-btn" aria-label="Download sermon details"><i class="fas fa-download" aria-hidden="true"></i> Download</button>
+                </div>
+                <div class="comments-section" role="region" aria-label="Comments section">
+                    <textarea placeholder="Add a comment..." aria-label="Write your comment here"></textarea>
+                    <button aria-label="Post comment">Post</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-envelope"></i> Email: <a href="mailto:info@rhemacalvarycenter.com">info@rhemacalvarycenter.com</a></p>
+                <p><i class="fas fa-phone"></i> Phone: <a href="tel:+233246643300">024 664 3300</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> Address: MPQH+45R, High Tension, Pokuase - Kwabenya, Road, Kwabenya</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <div class="social-links">
+                    <a href="index.html#home"><i class="fas fa-home"></i> Home</a>
+                    <a href="index.html#events"><i class="fas fa-calendar-alt"></i> Events</a>
+                    <a href="index.html#sermons"><i class="fas fa-book-open"></i> Sermons</a>
+                    <a href="store.html"><i class="fas fa-shopping-bag"></i> Store</a>
+                    <a href="members.html"><i class="fas fa-users"></i> Members</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Service Times</h3>
+                <p><i class="fas fa-church"></i> Sunday: 10:00 AM & 6:00 PM</p>
+                <p><i class="fas fa-bible"></i> Wednesday Bible Study: 7:00 PM</p>
+                <p><i class="fas fa-pray"></i> Friday Prayer Meeting: 6:30 PM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Rhema Calvary Center. All rights reserved. <a href="admin.html" class="admin-link" style="color: inherit; text-decoration: none; opacity: 0.8; margin-left: 10px; font-size: 0.9em;">Admin</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

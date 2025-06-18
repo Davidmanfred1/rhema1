@@ -1,0 +1,1811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Member Dashboard - Rhema Calvary Center - Access your account and exclusive content">
+    <meta name="keywords" content="church, dashboard, members, community, Rhema Calvary Center">
+    <meta name="author" content="Rhema Calvary Center">
+    <meta property="og:title" content="Member Dashboard - Rhema Calvary Center">
+    <meta property="og:description" content="Access your account and exclusive content at Rhema Calvary Center">
+    <meta property="og:image" content="https://rhemacalvarycenter.com/images/hero.jpg">
+    <meta property="og:url" content="https://rhemacalvarycenter.com/dashboard.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://rhemacalvarycenter.com/dashboard.html">
+    <title>Member Dashboard - Rhema Calvary Center</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="members.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body role="document">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="logo" role="banner"><img src="images/logo.png" alt="Rhema Calvary Center Church Logo">Rhema Calvary Center</div>
+        <div class="nav-links" role="menubar">
+            <a href="index.html" role="menuitem">Home</a>
+            <a href="index.html#events" role="menuitem">Events</a>
+            <a href="index.html#sermons" role="menuitem">Sermons</a>
+            <a href="store.html" role="menuitem">Store</a>
+            <a href="https://rhema.mychurchpay.com" role="menuitem" target="_blank" rel="noopener noreferrer">Giving</a>
+            <a href="index.html#about" role="menuitem">About</a>
+            <a href="index.html#contact" role="menuitem">Contact</a>
+            <a href="members.html" class="active" role="menuitem" aria-current="page">My Account</a>
+        </div>
+        <div class="nav-right">
+            <div class="cart-icon" onclick="showCart()" aria-label="View shopping cart">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+            <button class="mobile-menu" aria-label="Toggle navigation menu" aria-expanded="false">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <aside class="dashboard-sidebar">
+            <div class="user-profile">
+                <div class="user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="user-info">
+                    <h3 id="user-name">Loading...</h3>
+                    <p id="user-email">Loading...</p>
+                </div>
+            </div>
+            <nav class="dashboard-nav">
+                <ul>
+                    <li class="active"><a href="#overview" data-section="overview"><i class="fas fa-home"></i> Overview</a></li>
+                    <li><a href="#sermons" data-section="sermons"><i class="fas fa-book-reader"></i> Sermons</a></li>
+                    <li><a href="#events" data-section="events"><i class="fas fa-calendar-alt"></i> Events</a></li>
+                    <li><a href="#groups" data-section="groups"><i class="fas fa-users"></i> Groups</a></li>
+                    <li><a href="#prayer" data-section="prayer"><i class="fas fa-praying-hands"></i> Prayer Requests</a></li>
+                    <li><a href="#giving" data-section="giving"><i class="fas fa-hand-holding-heart"></i> Giving History</a></li>
+                    <li><a href="#profile" data-section="profile"><i class="fas fa-user-cog"></i> Profile Settings</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="logout-btn" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Sign Out</button>
+            </div>
+        </aside>
+
+        <main class="dashboard-content">
+            <!-- Overview Section -->
+            <section id="overview" class="dashboard-section active">
+                <div class="section-header">
+                    <h1>Welcome to Your Dashboard</h1>
+                    <p class="last-login">Last login: <span id="last-login-date">Loading...</span></p>
+                </div>
+
+                <div class="dashboard-cards">
+                    <div class="dashboard-card">
+                        <div class="card-icon"><i class="fas fa-calendar-check"></i></div>
+                        <div class="card-content">
+                            <h3>Upcoming Events</h3>
+                            <p class="card-value">3</p>
+                            <a href="#events" class="card-link">View All</a>
+                        </div>
+                    </div>
+                    <div class="dashboard-card">
+                        <div class="card-icon"><i class="fas fa-book-open"></i></div>
+                        <div class="card-content">
+                            <h3>New Sermons</h3>
+                            <p class="card-value">5</p>
+                            <a href="#sermons" class="card-link">Listen Now</a>
+                        </div>
+                    </div>
+                    <div class="dashboard-card">
+                        <div class="card-icon"><i class="fas fa-users"></i></div>
+                        <div class="card-content">
+                            <h3>Your Groups</h3>
+                            <p class="card-value">2</p>
+                            <a href="#groups" class="card-link">View Groups</a>
+                        </div>
+                    </div>
+                    <div class="dashboard-card">
+                        <div class="card-icon"><i class="fas fa-praying-hands"></i></div>
+                        <div class="card-content">
+                            <h3>Prayer Requests</h3>
+                            <p class="card-value">1</p>
+                            <a href="#prayer" class="card-link">Submit Request</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="announcements-section">
+                    <h2>Church Announcements</h2>
+                    <div class="announcements-list">
+                        <div class="announcement">
+                            <div class="announcement-date">
+                                <span class="month">JUN</span>
+                                <span class="day">15</span>
+                            </div>
+                            <div class="announcement-content">
+                                <h3>Summer Bible Camp Registration</h3>
+                                <p>Registration for our annual Summer Bible Camp is now open. Early bird pricing available until June 30th.</p>
+                                <a href="#" class="announcement-link">Learn More</a>
+                            </div>
+                        </div>
+                        <div class="announcement">
+                            <div class="announcement-date">
+                                <span class="month">JUN</span>
+                                <span class="day">22</span>
+                            </div>
+                            <div class="announcement-content">
+                                <h3>Volunteer Appreciation Dinner</h3>
+                                <p>Join us for a special dinner honoring all our dedicated volunteers. RSVP required by June 18th.</p>
+                                <a href="#" class="announcement-link">RSVP Now</a>
+                            </div>
+                        </div>
+                        <div class="announcement">
+                            <div class="announcement-date">
+                                <span class="month">JUL</span>
+                                <span class="day">05</span>
+                            </div>
+                            <div class="announcement-content">
+                                <h3>New Worship Series: "Faith Foundations"</h3>
+                                <p>Pastor Johnson begins a new 6-week sermon series exploring the foundations of our faith.</p>
+                                <a href="#" class="announcement-link">View Schedule</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sermons Section -->
+            <section id="sermons" class="dashboard-section">
+                <div class="section-header">
+                    <h1>Sermon Library</h1>
+                    <p>Access our complete sermon archive and study materials</p>
+                </div>
+
+                <div class="filter-controls">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search sermons...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="filter-dropdown">
+                        <select>
+                            <option value="">All Categories</option>
+                            <option value="faith">Faith</option>
+                            <option value="prayer">Prayer</option>
+                            <option value="family">Family</option>
+                            <option value="worship">Worship</option>
+                            <option value="discipleship">Discipleship</option>
+                        </select>
+                    </div>
+                    <div class="filter-dropdown">
+                        <select>
+                            <option value="">All Speakers</option>
+                            <option value="pastor-johnson">Pastor Johnson</option>
+                            <option value="pastor-williams">Pastor Williams</option>
+                            <option value="guest-speakers">Guest Speakers</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="sermons-grid">
+                    <div class="sermon-card">
+                        <div class="sermon-thumbnail">
+                            <img src="images/sermon1.jpg" alt="Sermon Thumbnail">
+                            <span class="sermon-duration">45:12</span>
+                        </div>
+                        <div class="sermon-details">
+                            <h3>The Power of Prayer</h3>
+                            <p class="sermon-meta">Pastor Johnson • June 12, 2023</p>
+                            <p class="sermon-description">Discover how prayer can transform your life and deepen your relationship with God.</p>
+                            <div class="sermon-actions">
+                                <button class="sermon-action"><i class="fas fa-play"></i> Play</button>
+                                <button class="sermon-action"><i class="fas fa-download"></i> Download</button>
+                                <button class="sermon-action"><i class="fas fa-file-alt"></i> Notes</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sermon-card">
+                        <div class="sermon-thumbnail">
+                            <img src="images/sermon2.jpg" alt="Sermon Thumbnail">
+                            <span class="sermon-duration">38:45</span>
+                        </div>
+                        <div class="sermon-details">
+                            <h3>Faith in Difficult Times</h3>
+                            <p class="sermon-meta">Pastor Williams • June 5, 2023</p>
+                            <p class="sermon-description">Learn how to maintain and strengthen your faith during life's challenges.</p>
+                            <div class="sermon-actions">
+                                <button class="sermon-action"><i class="fas fa-play"></i> Play</button>
+                                <button class="sermon-action"><i class="fas fa-download"></i> Download</button>
+                                <button class="sermon-action"><i class="fas fa-file-alt"></i> Notes</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sermon-card">
+                        <div class="sermon-thumbnail">
+                            <img src="images/sermon3.jpg" alt="Sermon Thumbnail">
+                            <span class="sermon-duration">42:30</span>
+                        </div>
+                        <div class="sermon-details">
+                            <h3>Building Strong Families</h3>
+                            <p class="sermon-meta">Pastor Johnson • May 29, 2023</p>
+                            <p class="sermon-description">Biblical principles for creating and nurturing healthy family relationships.</p>
+                            <div class="sermon-actions">
+                                <button class="sermon-action"><i class="fas fa-play"></i> Play</button>
+                                <button class="sermon-action"><i class="fas fa-download"></i> Download</button>
+                                <button class="sermon-action"><i class="fas fa-file-alt"></i> Notes</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sermon-card">
+                        <div class="sermon-thumbnail">
+                            <img src="images/sermon4.jpg" alt="Sermon Thumbnail">
+                            <span class="sermon-duration">40:15</span>
+                        </div>
+                        <div class="sermon-details">
+                            <h3>The Heart of Worship</h3>
+                            <p class="sermon-meta">Guest Speaker • May 22, 2023</p>
+                            <p class="sermon-description">Understanding what true worship means and how it transforms our relationship with God.</p>
+                            <div class="sermon-actions">
+                                <button class="sermon-action"><i class="fas fa-play"></i> Play</button>
+                                <button class="sermon-action"><i class="fas fa-download"></i> Download</button>
+                                <button class="sermon-action"><i class="fas fa-file-alt"></i> Notes</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sermon-card">
+                        <div class="sermon-thumbnail">
+                            <img src="images/sermon5.jpg" alt="Sermon Thumbnail">
+                            <span class="sermon-duration">36:50</span>
+                        </div>
+                        <div class="sermon-details">
+                            <h3>Walking in God's Purpose</h3>
+                            <p class="sermon-meta">Pastor Williams • May 15, 2023</p>
+                            <p class="sermon-description">Discovering and fulfilling God's unique purpose for your life.</p>
+                            <div class="sermon-actions">
+                                <button class="sermon-action"><i class="fas fa-play"></i> Play</button>
+                                <button class="sermon-action"><i class="fas fa-download"></i> Download</button>
+                                <button class="sermon-action"><i class="fas fa-file-alt"></i> Notes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pagination">
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <button class="pagination-btn">4</button>
+                    <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </section>
+
+            <!-- Events Section -->
+            <section id="events" class="dashboard-section">
+                <div class="section-header">
+                    <h1>Upcoming Events</h1>
+                    <p>Register for church events and activities</p>
+                </div>
+
+                <div class="events-calendar">
+                    <div class="calendar-header">
+                        <button class="calendar-nav"><i class="fas fa-chevron-left"></i></button>
+                        <h2>June 2023</h2>
+                        <button class="calendar-nav"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="calendar-grid">
+                        <!-- Calendar days will be generated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="events-list">
+                    <h2>Upcoming Events</h2>
+                    <div class="event-card">
+                        <div class="event-date">
+                            <span class="month">JUN</span>
+                            <span class="day">18</span>
+                        </div>
+                        <div class="event-details">
+                            <h3>Father's Day Special Service</h3>
+                            <p class="event-meta"><i class="fas fa-clock"></i> 10:00 AM - 12:00 PM <i class="fas fa-map-marker-alt"></i> Main Sanctuary</p>
+                            <p class="event-description">Join us for a special service honoring fathers and their important role in the family.</p>
+                            <button class="event-register">Register</button>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="event-date">
+                            <span class="month">JUN</span>
+                            <span class="day">24</span>
+                        </div>
+                        <div class="event-details">
+                            <h3>Youth Summer Kickoff</h3>
+                            <p class="event-meta"><i class="fas fa-clock"></i> 6:00 PM - 9:00 PM <i class="fas fa-map-marker-alt"></i> Youth Center</p>
+                            <p class="event-description">A fun evening for teens with games, food, worship, and a special message to kick off the summer.</p>
+                            <button class="event-register">Register</button>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="event-date">
+                            <span class="month">JUL</span>
+                            <span class="day">02</span>
+                        </div>
+                        <div class="event-details">
+                            <h3>Community Outreach Day</h3>
+                            <p class="event-meta"><i class="fas fa-clock"></i> 9:00 AM - 2:00 PM <i class="fas fa-map-marker-alt"></i> Community Center</p>
+                            <p class="event-description">Volunteer to serve our community through various outreach projects and activities.</p>
+                            <button class="event-register">Register</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Groups Section -->
+            <section id="groups" class="dashboard-section">
+                <div class="section-header">
+                    <h1>Community Groups</h1>
+                    <p>Connect with others in small groups based on interests, life stages, or location</p>
+                </div>
+
+                <div class="filter-controls">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search groups...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="filter-dropdown">
+                        <select>
+                            <option value="">All Categories</option>
+                            <option value="bible-study">Bible Study</option>
+                            <option value="prayer">Prayer</option>
+                            <option value="young-adults">Young Adults</option>
+                            <option value="families">Families</option>
+                            <option value="seniors">Seniors</option>
+                            <option value="men">Men</option>
+                            <option value="women">Women</option>
+                        </select>
+                    </div>
+                    <div class="filter-dropdown">
+                        <select>
+                            <option value="">All Locations</option>
+                            <option value="church">Church Campus</option>
+                            <option value="north">North Area</option>
+                            <option value="south">South Area</option>
+                            <option value="east">East Area</option>
+                            <option value="west">West Area</option>
+                            <option value="online">Online</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="groups-grid">
+                    <div class="group-card">
+                        <div class="group-image">
+                            <img src="images/group1.jpg" alt="Young Adults Group">
+                        </div>
+                        <div class="group-content">
+                            <div class="group-category">Young Adults</div>
+                            <h3>Faith & Fellowship</h3>
+                            <p class="group-meta"><i class="fas fa-calendar"></i> Tuesdays, 7:00 PM <i class="fas fa-map-marker-alt"></i> Church Campus</p>
+                            <p class="group-description">A vibrant community for young adults (18-30) to grow in faith and build meaningful relationships.</p>
+                            <div class="group-stats">
+                                <span><i class="fas fa-users"></i> 24 Members</span>
+                                <span><i class="fas fa-star"></i> 4.9/5</span>
+                            </div>
+                            <button class="group-join">Join Group</button>
+                        </div>
+                    </div>
+                    <div class="group-card">
+                        <div class="group-image">
+                            <img src="images/group2.jpg" alt="Bible Study Group">
+                        </div>
+                        <div class="group-content">
+                            <div class="group-category">Bible Study</div>
+                            <h3>Deeper Understanding</h3>
+                            <p class="group-meta"><i class="fas fa-calendar"></i> Wednesdays, 6:30 PM <i class="fas fa-map-marker-alt"></i> North Area</p>
+                            <p class="group-description">An in-depth study of Scripture with thoughtful discussion and practical application.</p>
+                            <div class="group-stats">
+                                <span><i class="fas fa-users"></i> 18 Members</span>
+                                <span><i class="fas fa-star"></i> 4.8/5</span>
+                            </div>
+                            <button class="group-join">Join Group</button>
+                        </div>
+                    </div>
+                    <div class="group-card">
+                        <div class="group-image">
+                            <img src="images/group3.jpg" alt="Families Group">
+                        </div>
+                        <div class="group-content">
+                            <div class="group-category">Families</div>
+                            <h3>Family Foundations</h3>
+                            <p class="group-meta"><i class="fas fa-calendar"></i> Sundays, 4:00 PM <i class="fas fa-map-marker-alt"></i> East Area</p>
+                            <p class="group-description">For families with children of all ages to learn and grow together in faith and community.</p>
+                            <div class="group-stats">
+                                <span><i class="fas fa-users"></i> 32 Members</span>
+                                <span><i class="fas fa-star"></i> 4.7/5</span>
+                            </div>
+                            <button class="group-join">Join Group</button>
+                        </div>
+                    </div>
+                    <div class="group-card">
+                        <div class="group-image">
+                            <img src="images/group4.jpg" alt="Prayer Group">
+                        </div>
+                        <div class="group-content">
+                            <div class="group-category">Prayer</div>
+                            <h3>Intercessory Prayer</h3>
+                            <p class="group-meta"><i class="fas fa-calendar"></i> Thursdays, 7:00 AM <i class="fas fa-map-marker-alt"></i> Church Campus</p>
+                            <p class="group-description">A dedicated group that meets to pray for the church, community, and world needs.</p>
+                            <div class="group-stats">
+                                <span><i class="fas fa-users"></i> 15 Members</span>
+                                <span><i class="fas fa-star"></i> 5.0/5</span>
+                            </div>
+                            <button class="group-join">Join Group</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="create-group">
+                    <h3>Don't see a group that fits your needs?</h3>
+                    <p>Start your own group and invite others to join.</p>
+                    <button class="create-group-btn">Start a New Group</button>
+                </div>
+            </section>
+
+            <!-- Prayer Requests Section -->
+            <section id="prayer" class="dashboard-section">
+                <div class="section-header">
+                    <h1>Prayer Requests</h1>
+                    <p>Submit and receive prayer support from our dedicated prayer team</p>
+                </div>
+
+                <div class="prayer-container">
+                    <div class="prayer-form-container">
+                        <h2>Submit a Prayer Request</h2>
+                        <form class="prayer-form">
+                            <div class="form-group">
+                                <label for="prayer-type">Request Type</label>
+                                <select id="prayer-type" required>
+                                    <option value="">Select a category</option>
+                                    <option value="personal">Personal</option>
+                                    <option value="family">Family</option>
+                                    <option value="health">Health & Healing</option>
+                                    <option value="financial">Financial</option>
+                                    <option value="spiritual">Spiritual Growth</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="prayer-request">Your Request</label>
+                                <textarea id="prayer-request" rows="5" placeholder="Share your prayer request here..." required></textarea>
+                            </div>
+                            <div class="form-checkbox">
+                                <input type="checkbox" id="prayer-private">
+                                <label for="prayer-private">Keep this request private (only visible to the prayer team)</label>
+                            </div>
+                            <div class="form-checkbox">
+                                <input type="checkbox" id="prayer-updates">
+                                <label for="prayer-updates">Receive email updates when people pray for your request</label>
+                            </div>
+                            <button type="submit" class="submit-prayer">Submit Request</button>
+                        </form>
+                    </div>
+
+                    <div class="prayer-list-container">
+                        <h2>Your Prayer Requests</h2>
+                        <div class="prayer-list">
+                            <div class="prayer-item">
+                                <div class="prayer-header">
+                                    <span class="prayer-category health">Health & Healing</span>
+                                    <span class="prayer-date">June 10, 2023</span>
+                                </div>
+                                <p class="prayer-text">Please pray for my mother who is undergoing surgery next week. Pray for the doctors and for a successful procedure and quick recovery.</p>
+                                <div class="prayer-stats">
+                                    <span><i class="fas fa-praying-hands"></i> 12 people praying</span>
+                                    <span class="prayer-status in-progress">In Progress</span>
+                                </div>
+                                <div class="prayer-actions">
+                                    <button class="prayer-action"><i class="fas fa-edit"></i> Edit</button>
+                                    <button class="prayer-action"><i class="fas fa-check-circle"></i> Mark as Answered</button>
+                                </div>
+                            </div>
+                            <div class="prayer-item">
+                                <div class="prayer-header">
+                                    <span class="prayer-category spiritual">Spiritual Growth</span>
+                                    <span class="prayer-date">May 28, 2023</span>
+                                </div>
+                                <p class="prayer-text">I'm seeking guidance for a major life decision. Please pray for clarity and wisdom as I discern God's will for my next steps.</p>
+                                <div class="prayer-stats">
+                                    <span><i class="fas fa-praying-hands"></i> 8 people praying</span>
+                                    <span class="prayer-status in-progress">In Progress</span>
+                                </div>
+                                <div class="prayer-actions">
+                                    <button class="prayer-action"><i class="fas fa-edit"></i> Edit</button>
+                                    <button class="prayer-action"><i class="fas fa-check-circle"></i> Mark as Answered</button>
+                                </div>
+                            </div>
+                            <div class="prayer-item">
+                                <div class="prayer-header">
+                                    <span class="prayer-category family">Family</span>
+                                    <span class="prayer-date">May 15, 2023</span>
+                                </div>
+                                <p class="prayer-text">Praise report! My son received the job offer he was hoping for. Thank you for all your prayers!</p>
+                                <div class="prayer-stats">
+                                    <span><i class="fas fa-praying-hands"></i> 15 people prayed</span>
+                                    <span class="prayer-status answered">Answered</span>
+                                </div>
+                                <div class="prayer-actions">
+                                    <button class="prayer-action"><i class="fas fa-heart"></i> Send Thanks</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Giving History Section -->
+            <section id="giving" class="dashboard-section">
+                <div class="section-header">
+                    <h1>Your Giving History</h1>
+                    <p>View your contributions and download tax statements</p>
+                </div>
+
+                <div class="giving-summary">
+                    <div class="giving-card">
+                        <h3>Year-to-Date Giving</h3>
+                        <p class="giving-amount">$1,250.00</p>
+                        <p class="giving-period">January 1 - Present</p>
+                    </div>
+                    <div class="giving-card">
+                        <h3>Last Year's Giving</h3>
+                        <p class="giving-amount">$2,875.00</p>
+                        <p class="giving-period">January - December 2022</p>
+                    </div>
+                    <div class="giving-card">
+                        <h3>Recurring Giving</h3>
+                        <p class="giving-amount">$150.00</p>
+                        <p class="giving-period">Monthly</p>
+                    </div>
+                </div>
+
+                <div class="giving-actions">
+                    <button class="giving-action-btn"><i class="fas fa-hand-holding-heart"></i> Give Now</button>
+                    <button class="giving-action-btn"><i class="fas fa-file-download"></i> Download Tax Statement</button>
+                    <button class="giving-action-btn"><i class="fas fa-cog"></i> Manage Recurring Giving</button>
+                </div>
+
+                <div class="giving-history">
+                    <h2>Recent Transactions</h2>
+                    <div class="giving-table-container">
+                        <table class="giving-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Amount</th>
+                                    <th>Fund</th>
+                                    <th>Method</th>
+                                    <th>Status</th>
+                                    <th>Receipt</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>June 4, 2023</td>
+                                    <td>$150.00</td>
+                                    <td>General Fund</td>
+                                    <td>Credit Card</td>
+                                    <td><span class="status-complete">Complete</span></td>
+                                    <td><a href="#" class="receipt-link"><i class="fas fa-download"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>May 7, 2023</td>
+                                    <td>$150.00</td>
+                                    <td>General Fund</td>
+                                    <td>Credit Card</td>
+                                    <td><span class="status-complete">Complete</span></td>
+                                    <td><a href="#" class="receipt-link"><i class="fas fa-download"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>April 2, 2023</td>
+                                    <td>$150.00</td>
+                                    <td>General Fund</td>
+                                    <td>Credit Card</td>
+                                    <td><span class="status-complete">Complete</span></td>
+                                    <td><a href="#" class="receipt-link"><i class="fas fa-download"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>March 5, 2023</td>
+                                    <td>$150.00</td>
+                                    <td>General Fund</td>
+                                    <td>Credit Card</td>
+                                    <td><span class="status-complete">Complete</span></td>
+                                    <td><a href="#" class="receipt-link"><i class="fas fa-download"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>February 5, 2023</td>
+                                    <td>$150.00</td>
+                                    <td>General Fund</td>
+                                    <td>Credit Card</td>
+                                    <td><span class="status-complete">Complete</span></td>
+                                    <td><a href="#" class="receipt-link"><i class="fas fa-download"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>January 1, 2023</td>
+                                    <td>$500.00</td>
+                                    <td>Building Fund</td>
+                                    <td>Bank Transfer</td>
+                                    <td><span class="status-complete">Complete</span></td>
+                                    <td><a href="#" class="receipt-link"><i class="fas fa-download"></i></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="pagination">
+                        <button class="pagination-btn active">1</button>
+                        <button class="pagination-btn">2</button>
+                        <button class="pagination-btn">3</button>
+                        <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Profile Settings Section -->
+            <section id="profile" class="dashboard-section">
+                <div class="section-header">
+                    <h1>Profile Settings</h1>
+                    <p>Manage your account information and preferences</p>
+                </div>
+
+                <div class="profile-container">
+                    <div class="profile-sidebar">
+                        <div class="profile-picture">
+                            <div class="profile-image">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <button class="change-photo-btn">Change Photo</button>
+                        </div>
+                        <div class="profile-menu">
+                            <button class="profile-menu-item active" data-tab="personal">Personal Information</button>
+                            <button class="profile-menu-item" data-tab="contact">Contact Details</button>
+                            <button class="profile-menu-item" data-tab="security">Security</button>
+                            <button class="profile-menu-item" data-tab="notifications">Notifications</button>
+                            <button class="profile-menu-item" data-tab="privacy">Privacy</button>
+                        </div>
+                    </div>
+
+                    <div class="profile-content">
+                        <!-- Personal Information Tab -->
+                        <div class="profile-tab active" id="personal-tab">
+                            <h2>Personal Information</h2>
+                            <form class="profile-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="first-name">First Name</label>
+                                        <input type="text" id="first-name" value="John">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="last-name">Last Name</label>
+                                        <input type="text" id="last-name" value="Doe">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="birth-date">Date of Birth</label>
+                                        <input type="date" id="birth-date">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="gender">Gender</label>
+                                        <select id="gender">
+                                            <option value="">Select</option>
+                                            <option value="male">Male</option>
+                                            <option value="female">Female</option>
+                                            <option value="other">Prefer not to say</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="bio">About Me</label>
+                                    <textarea id="bio" rows="4" placeholder="Share a little about yourself..."></textarea>
+                                </div>
+                                <button type="submit" class="save-profile-btn">Save Changes</button>
+                            </form>
+                        </div>
+
+                        <!-- Contact Details Tab -->
+                        <div class="profile-tab" id="contact-tab">
+                            <h2>Contact Details</h2>
+                            <form class="profile-form">
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" value="john.doe@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" value="(555) 123-4567">
+                                </div>
+                                <div class="form-group">
+                                    <label for="address">Address</label>
+                                    <input type="text" id="address" placeholder="Street Address">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="city">City</label>
+                                        <input type="text" id="city">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="state">State</label>
+                                        <input type="text" id="state">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="zip">ZIP Code</label>
+                                        <input type="text" id="zip">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="country">Country</label>
+                                        <input type="text" id="country" value="United States">
+                                    </div>
+                                </div>
+                                <button type="submit" class="save-profile-btn">Save Changes</button>
+                            </form>
+                        </div>
+
+                        <!-- Security Tab -->
+                        <div class="profile-tab" id="security-tab">
+                            <h2>Security</h2>
+                            <form class="profile-form">
+                                <h3>Change Password</h3>
+                                <div class="form-group">
+                                    <label for="current-password">Current Password</label>
+                                    <input type="password" id="current-password">
+                                </div>
+                                <div class="form-group">
+                                    <label for="new-password">New Password</label>
+                                    <input type="password" id="new-password">
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirm-password">Confirm New Password</label>
+                                    <input type="password" id="confirm-password">
+                                </div>
+                                <button type="submit" class="save-profile-btn">Update Password</button>
+
+                                <h3 class="mt-4">Two-Factor Authentication</h3>
+                                <div class="form-checkbox">
+                                    <input type="checkbox" id="enable-2fa">
+                                    <label for="enable-2fa">Enable two-factor authentication for added security</label>
+                                </div>
+                                <p class="help-text">Two-factor authentication adds an extra layer of security to your account by requiring a verification code in addition to your password.</p>
+                                <button type="button" class="secondary-btn">Set Up Two-Factor Authentication</button>
+
+                                <h3 class="mt-4">Login Sessions</h3>
+                                <div class="sessions-list">
+                                    <div class="session-item">
+                                        <div class="session-info">
+                                            <i class="fas fa-laptop"></i>
+                                            <div>
+                                                <h4>Windows PC - Chrome</h4>
+                                                <p>Current session • Last active: Just now</p>
+                                            </div>
+                                        </div>
+                                        <span class="session-active">Active</span>
+                                    </div>
+                                    <div class="session-item">
+                                        <div class="session-info">
+                                            <i class="fas fa-mobile-alt"></i>
+                                            <div>
+                                                <h4>iPhone - Safari</h4>
+                                                <p>Last active: 2 days ago</p>
+                                            </div>
+                                        </div>
+                                        <button class="session-logout">Log Out</button>
+                                    </div>
+                                </div>
+                                <button type="button" class="danger-btn">Log Out of All Devices</button>
+                            </form>
+                        </div>
+
+                        <!-- Notifications Tab -->
+                        <div class="profile-tab" id="notifications-tab">
+                            <h2>Notification Preferences</h2>
+                            <form class="profile-form">
+                                <h3>Email Notifications</h3>
+                                <div class="notification-group">
+                                    <div class="form-checkbox">
+                                        <input type="checkbox" id="notify-events" checked>
+                                        <label for="notify-events">Event announcements and reminders</label>
+                                    </div>
+                                    <div class="form-checkbox">
+                                        <input type="checkbox" id="notify-sermons" checked>
+                                        <label for="notify-sermons">New sermon uploads</label>
+                                    </div>
+                                    <div class="form-checkbox">
+                                        <input type="checkbox" id="notify-prayer" checked>
+                                        <label for="notify-prayer">Prayer request updates</label>
+                                    </div>
+                                    <div class="form-checkbox">
+                                        <input type="checkbox" id="notify-groups">
+                                        <label for="notify-groups">Group activity and messages</label>
+                                    </div>
+                                    <div class="form-checkbox">
+                                        <input type="checkbox" id="notify-newsletter" checked>
+                                        <label for="notify-newsletter">Church newsletter</label>
+                                    </div>
+                                </div>
+
+                                <h3 class="mt-4">Notification Frequency</h3>
+                                <div class="form-group">
+                                    <label for="notification-frequency">Email Digest Frequency</label>
+                                    <select id="notification-frequency">
+                                        <option value="immediately">Send immediately</option>
+                                        <option value="daily" selected>Daily digest</option>
+                                        <option value="weekly">Weekly digest</option>
+                                    </select>
+                                </div>
+
+                                <button type="submit" class="save-profile-btn">Save Preferences</button>
+                            </form>
+                        </div>
+
+                        <!-- Privacy Tab -->
+                        <div class="profile-tab" id="privacy-tab">
+                            <h2>Privacy Settings</h2>
+                            <form class="profile-form">
+                                <h3>Profile Visibility</h3>
+                                <div class="form-group">
+                                    <label for="profile-visibility">Who can see my profile</label>
+                                    <select id="profile-visibility">
+                                        <option value="everyone">All church members</option>
+                                        <option value="groups">Only my groups</option>
+                                        <option value="staff">Church staff only</option>
+                                    </select>
+                                </div>
+
+                                <h3 class="mt-4">Directory Listing</h3>
+                                <div class="form-checkbox">
+                                    <input type="checkbox" id="directory-listing" checked>
+                                    <label for="directory-listing">Include me in the church directory</label>
+                                </div>
+                                <p class="help-text">Your name and contact information will be visible to other church members in the directory.</p>
+
+                                <h3 class="mt-4">Prayer Requests</h3>
+                                <div class="form-group">
+                                    <label for="prayer-visibility">Default prayer request visibility</label>
+                                    <select id="prayer-visibility">
+                                        <option value="public">Public (all members can see)</option>
+                                        <option value="private" selected>Private (only prayer team can see)</option>
+                                    </select>
+                                </div>
+
+                                <h3 class="mt-4">Data Management</h3>
+                                <button type="button" class="secondary-btn">Download My Data</button>
+                                <button type="button" class="danger-btn mt-3">Delete My Account</button>
+
+                                <button type="submit" class="save-profile-btn mt-4">Save Privacy Settings</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="cart-modal" class="modal" role="dialog" aria-labelledby="cart-title" aria-hidden="true">
+        <div class="modal-content">
+            <h3 id="cart-title">Shopping Cart</h3>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-amount">GHS 0.00</span>
+            </div>
+            <div class="cart-buttons">
+                <button onclick="closeCart()" class="secondary-btn">Continue Shopping</button>
+                <button onclick="checkout()" class="primary-btn">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="db.js"></script>
+    <script src="script.js"></script>
+    <script type="module" src="dashboard.js"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Member Dashboard - Rhema Calvary Center - Access your account and exclusive content">
+    <meta name="keywords" content="church, dashboard, members, community, Rhema Calvary Center">
+    <meta name="author" content="Rhema Calvary Center">
+    <meta property="og:title" content="Member Dashboard - Rhema Calvary Center">
+    <meta property="og:description" content="Access your account and exclusive content at Rhema Calvary Center">
+    <meta property="og:image" content="https://rhemacalvarycenter.com/images/hero.jpg">
+    <meta property="og:url" content="https://rhemacalvarycenter.com/dashboard.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://rhemacalvarycenter.com/dashboard.html">
+    <title>Member Dashboard - Rhema Calvary Center</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="members.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body role="document">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="logo" role="banner"><img src="images/logo.png" alt="Rhema Calvary Center Church Logo">Rhema Calvary Center</div>
+        <div class="nav-links" role="menubar">
+            <a href="index.html" role="menuitem">Home</a>
+            <a href="index.html#events" role="menuitem">Events</a>
+            <a href="index.html#sermons" role="menuitem">Sermons</a>
+            <a href="store.html" role="menuitem">Store</a>
+            <a href="https://rhema.mychurchpay.com" role="menuitem" target="_blank" rel="noopener noreferrer">Giving</a>
+            <a href="index.html#about" role="menuitem">About</a>
+            <a href="index.html#contact" role="menuitem">Contact</a>
+            <a href="members.html" class="active" role="menuitem" aria-current="page">My Account</a>
+        </div>
+        <div class="nav-right">
+            <div class="cart-icon" onclick="showCart()" aria-label="View shopping cart">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+            <button class="mobile-menu" aria-label="Toggle navigation menu" aria-expanded="false">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <aside class="dashboard-sidebar">
+            <div class="user-profile">
+                <div class="user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="user-info">
+                    <h3 id="user-name">Loading...</h3>
+                    <p id="user-email">Loading...</p>
+                </div>
+            </div>
+            <nav class="dashboard-nav">
+                <ul>
+                    <li class="active"><a href="#overview" data-section="overview"><i class="fas fa-home"></i> Overview</a></li>
+                    <li><a href="#sermons" data-section="sermons"><i class="fas fa-book-reader"></i> Sermons</a></li>
+                    <li><a href="#events" data-section="events"><i class="fas fa-calendar-alt"></i> Events</a></li>
+                    <li><a href="#groups" data-section="groups"><i class="fas fa-users"></i> Groups</a></li>
+                    <li><a href="#prayer" data-section="prayer"><i class="fas fa-praying-hands"></i> Prayer Requests</a></li>
+                    <li><a href="#giving" data-section="giving"><i class="fas fa-hand-holding-heart"></i> Giving History</a></li>
+                    <li><a href="#profile" data-section="profile"><i class="fas fa-user-cog"></i> Profile Settings</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="logout-btn" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Sign Out</button>
+            </div>
+        </aside>
+
+        <main class="dashboard-content">
+            <!-- Overview Section -->
+            <section id="overview" class="dashboard-section active">
+                <div class="section-header">
+                    <h1>Welcome to Your Dashboard</h1>
+                    <p class="last-login">Last login: <span id="last-login-date">Loading...</span></p>
+                </div>
+
+                <div class="dashboard-cards">
+                    <div class="dashboard-card">
+                        <div class="card-icon"><i class="fas fa-calendar-check"></i></div>
+                        <div class="card-content">
+                            <h3>Upcoming Events</h3>
+                            <p class="card-value">3</p>
+                            <a href="#events" class="card-link">View All</a>
+                        </div>
+                    </div>
+                    <div class="dashboard-card">
+                        <div class="card-icon"><i class="fas fa-book-open"></i></div>
+                        <div class="card-content">
+                            <h3>New Sermons</h3>
+                            <p class="card-value">5</p>
+                            <a href="#sermons" class="card-link">Listen Now</a>
+                        </div>
+                    </div>
+                    <div class="dashboard-card">
+                        <div class="card-icon"><i class="fas fa-users"></i></div>
+                        <div class="card-content">
+                            <h3>Your Groups</h3>
+                            <p class="card-value">2</p>
+                            <a href="#groups" class="card-link">View Groups</a>
+                        </div>
+                    </div>
+                    <div class="dashboard-card">
+                        <div class="card-icon"><i class="fas fa-praying-hands"></i></div>
+                        <div class="card-content">
+                            <h3>Prayer Requests</h3>
+                            <p class="card-value">1</p>
+                            <a href="#prayer" class="card-link">Submit Request</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="announcements-section">
+                    <h2>Church Announcements</h2>
+                    <div class="announcements-list">
+                        <div class="announcement">
+                            <div class="announcement-date">
+                                <span class="month">JUN</span>
+                                <span class="day">15</span>
+                            </div>
+                            <div class="announcement-content">
+                                <h3>Summer Bible Camp Registration</h3>
+                                <p>Registration for our annual Summer Bible Camp is now open. Early bird pricing available until June 30th.</p>
+                                <a href="#" class="announcement-link">Learn More</a>
+                            </div>
+                        </div>
+                        <div class="announcement">
+                            <div class="announcement-date">
+                                <span class="month">JUN</span>
+                                <span class="day">22</span>
+                            </div>
+                            <div class="announcement-content">
+                                <h3>Volunteer Appreciation Dinner</h3>
+                                <p>Join us for a special dinner honoring all our dedicated volunteers. RSVP required by June 18th.</p>
+                                <a href="#" class="announcement-link">RSVP Now</a>
+                            </div>
+                        </div>
+                        <div class="announcement">
+                            <div class="announcement-date">
+                                <span class="month">JUL</span>
+                                <span class="day">05</span>
+                            </div>
+                            <div class="announcement-content">
+                                <h3>New Worship Series: "Faith Foundations"</h3>
+                                <p>Pastor Johnson begins a new 6-week sermon series exploring the foundations of our faith.</p>
+                                <a href="#" class="announcement-link">View Schedule</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sermons Section -->
+            <section id="sermons" class="dashboard-section">
+                <div class="section-header">
+                    <h1>Sermon Library</h1>
+                    <p>Access our complete sermon archive and study materials</p>
+                </div>
+
+                <div class="filter-controls">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search sermons...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="filter-dropdown">
+                        <select>
+                            <option value="">All Categories</option>
+                            <option value="faith">Faith</option>
+                            <option value="prayer">Prayer</option>
+                            <option value="family">Family</option>
+                            <option value="worship">Worship</option>
+                            <option value="discipleship">Discipleship</option>
+                        </select>
+                    </div>
+                    <div class="filter-dropdown">
+                        <select>
+                            <option value="">All Speakers</option>
+                            <option value="pastor-johnson">Pastor Johnson</option>
+                            <option value="pastor-williams">Pastor Williams</option>
+                            <option value="guest-speakers">Guest Speakers</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="sermons-grid">
+                    <div class="sermon-card">
+                        <div class="sermon-thumbnail">
+                            <img src="images/sermon1.jpg" alt="Sermon Thumbnail">
+                            <span class="sermon-duration">45:12</span>
+                        </div>
+                        <div class="sermon-details">
+                            <h3>The Power of Prayer</h3>
+                            <p class="sermon-meta">Pastor Johnson • June 12, 2023</p>
+                            <p class="sermon-description">Discover how prayer can transform your life and deepen your relationship with God.</p>
+                            <div class="sermon-actions">
+                                <button class="sermon-action"><i class="fas fa-play"></i> Play</button>
+                                <button class="sermon-action"><i class="fas fa-download"></i> Download</button>
+                                <button class="sermon-action"><i class="fas fa-file-alt"></i> Notes</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sermon-card">
+                        <div class="sermon-thumbnail">
+                            <img src="images/sermon2.jpg" alt="Sermon Thumbnail">
+                            <span class="sermon-duration">38:45</span>
+                        </div>
+                        <div class="sermon-details">
+                            <h3>Faith in Difficult Times</h3>
+                            <p class="sermon-meta">Pastor Williams • June 5, 2023</p>
+                            <p class="sermon-description">Learn how to maintain and strengthen your faith during life's challenges.</p>
+                            <div class="sermon-actions">
+                                <button class="sermon-action"><i class="fas fa-play"></i> Play</button>
+                                <button class="sermon-action"><i class="fas fa-download"></i> Download</button>
+                                <button class="sermon-action"><i class="fas fa-file-alt"></i> Notes</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sermon-card">
+                        <div class="sermon-thumbnail">
+                            <img src="images/sermon3.jpg" alt="Sermon Thumbnail">
+                            <span class="sermon-duration">42:30</span>
+                        </div>
+                        <div class="sermon-details">
+                            <h3>Building Strong Families</h3>
+                            <p class="sermon-meta">Pastor Johnson • May 29, 2023</p>
+                            <p class="sermon-description">Biblical principles for creating and nurturing healthy family relationships.</p>
+                            <div class="sermon-actions">
+                                <button class="sermon-action"><i class="fas fa-play"></i> Play</button>
+                                <button class="sermon-action"><i class="fas fa-download"></i> Download</button>
+                                <button class="sermon-action"><i class="fas fa-file-alt"></i> Notes</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sermon-card">
+                        <div class="sermon-thumbnail">
+                            <img src="images/sermon4.jpg" alt="Sermon Thumbnail">
+                            <span class="sermon-duration">40:15</span>
+                        </div>
+                        <div class="sermon-details">
+                            <h3>The Heart of Worship</h3>
+                            <p class="sermon-meta">Guest Speaker • May 22, 2023</p>
+                            <p class="sermon-description">Understanding what true worship means and how it transforms our relationship with God.</p>
+                            <div class="sermon-actions">
+                                <button class="sermon-action"><i class="fas fa-play"></i> Play</button>
+                                <button class="sermon-action"><i class="fas fa-download"></i> Download</button>
+                                <button class="sermon-action"><i class="fas fa-file-alt"></i> Notes</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sermon-card">
+                        <div class="sermon-thumbnail">
+                            <img src="images/sermon5.jpg" alt="Sermon Thumbnail">
+                            <span class="sermon-duration">36:50</span>
+                        </div>
+                        <div class="sermon-details">
+                            <h3>Walking in God's Purpose</h3>
+                            <p class="sermon-meta">Pastor Williams • May 15, 2023</p>
+                            <p class="sermon-description">Discovering and fulfilling God's unique purpose for your life.</p>
+                            <div class="sermon-actions">
+                                <button class="sermon-action"><i class="fas fa-play"></i> Play</button>
+                                <button class="sermon-action"><i class="fas fa-download"></i> Download</button>
+                                <button class="sermon-action"><i class="fas fa-file-alt"></i> Notes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pagination">
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <button class="pagination-btn">4</button>
+                    <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </section>
+
+            <!-- Events Section -->
+            <section id="events" class="dashboard-section">
+                <div class="section-header">
+                    <h1>Upcoming Events</h1>
+                    <p>Register for church events and activities</p>
+                </div>
+
+                <div class="events-calendar">
+                    <div class="calendar-header">
+                        <button class="calendar-nav"><i class="fas fa-chevron-left"></i></button>
+                        <h2>June 2023</h2>
+                        <button class="calendar-nav"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="calendar-grid">
+                        <!-- Calendar days will be generated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="events-list">
+                    <h2>Upcoming Events</h2>
+                    <div class="event-card">
+                        <div class="event-date">
+                            <span class="month">JUN</span>
+                            <span class="day">18</span>
+                        </div>
+                        <div class="event-details">
+                            <h3>Father's Day Special Service</h3>
+                            <p class="event-meta"><i class="fas fa-clock"></i> 10:00 AM - 12:00 PM <i class="fas fa-map-marker-alt"></i> Main Sanctuary</p>
+                            <p class="event-description">Join us for a special service honoring fathers and their important role in the family.</p>
+                            <button class="event-register">Register</button>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="event-date">
+                            <span class="month">JUN</span>
+                            <span class="day">24</span>
+                        </div>
+                        <div class="event-details">
+                            <h3>Youth Summer Kickoff</h3>
+                            <p class="event-meta"><i class="fas fa-clock"></i> 6:00 PM - 9:00 PM <i class="fas fa-map-marker-alt"></i> Youth Center</p>
+                            <p class="event-description">A fun evening for teens with games, food, worship, and a special message to kick off the summer.</p>
+                            <button class="event-register">Register</button>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="event-date">
+                            <span class="month">JUL</span>
+                            <span class="day">02</span>
+                        </div>
+                        <div class="event-details">
+                            <h3>Community Outreach Day</h3>
+                            <p class="event-meta"><i class="fas fa-clock"></i> 9:00 AM - 2:00 PM <i class="fas fa-map-marker-alt"></i> Community Center</p>
+                            <p class="event-description">Volunteer to serve our community through various outreach projects and activities.</p>
+                            <button class="event-register">Register</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Groups Section -->
+            <section id="groups" class="dashboard-section">
+                <div class="section-header">
+                    <h1>Community Groups</h1>
+                    <p>Connect with others in small groups based on interests, life stages, or location</p>
+                </div>
+
+                <div class="filter-controls">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search groups...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="filter-dropdown">
+                        <select>
+                            <option value="">All Categories</option>
+                            <option value="bible-study">Bible Study</option>
+                            <option value="prayer">Prayer</option>
+                            <option value="young-adults">Young Adults</option>
+                            <option value="families">Families</option>
+                            <option value="seniors">Seniors</option>
+                            <option value="men">Men</option>
+                            <option value="women">Women</option>
+                        </select>
+                    </div>
+                    <div class="filter-dropdown">
+                        <select>
+                            <option value="">All Locations</option>
+                            <option value="church">Church Campus</option>
+                            <option value="north">North Area</option>
+                            <option value="south">South Area</option>
+                            <option value="east">East Area</option>
+                            <option value="west">West Area</option>
+                            <option value="online">Online</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="groups-grid">
+                    <div class="group-card">
+                        <div class="group-image">
+                            <img src="images/group1.jpg" alt="Young Adults Group">
+                        </div>
+                        <div class="group-content">
+                            <div class="group-category">Young Adults</div>
+                            <h3>Faith & Fellowship</h3>
+                            <p class="group-meta"><i class="fas fa-calendar"></i> Tuesdays, 7:00 PM <i class="fas fa-map-marker-alt"></i> Church Campus</p>
+                            <p class="group-description">A vibrant community for young adults (18-30) to grow in faith and build meaningful relationships.</p>
+                            <div class="group-stats">
+                                <span><i class="fas fa-users"></i> 24 Members</span>
+                                <span><i class="fas fa-star"></i> 4.9/5</span>
+                            </div>
+                            <button class="group-join">Join Group</button>
+                        </div>
+                    </div>
+                    <div class="group-card">
+                        <div class="group-image">
+                            <img src="images/group2.jpg" alt="Bible Study Group">
+                        </div>
+                        <div class="group-content">
+                            <div class="group-category">Bible Study</div>
+                            <h3>Deeper Understanding</h3>
+                            <p class="group-meta"><i class="fas fa-calendar"></i> Wednesdays, 6:30 PM <i class="fas fa-map-marker-alt"></i> North Area</p>
+                            <p class="group-description">An in-depth study of Scripture with thoughtful discussion and practical application.</p>
+                            <div class="group-stats">
+                                <span><i class="fas fa-users"></i> 18 Members</span>
+                                <span><i class="fas fa-star"></i> 4.8/5</span>
+                            </div>
+                            <button class="group-join">Join Group</button>
+                        </div>
+                    </div>
+                    <div class="group-card">
+                        <div class="group-image">
+                            <img src="images/group3.jpg" alt="Families Group">
+                        </div>
+                        <div class="group-content">
+                            <div class="group-category">Families</div>
+                            <h3>Family Foundations</h3>
+                            <p class="group-meta"><i class="fas fa-calendar"></i> Sundays, 4:00 PM <i class="fas fa-map-marker-alt"></i> East Area</p>
+                            <p class="group-description">For families with children of all ages to learn and grow together in faith and community.</p>
+                            <div class="group-stats">
+                                <span><i class="fas fa-users"></i> 32 Members</span>
+                                <span><i class="fas fa-star"></i> 4.7/5</span>
+                            </div>
+                            <button class="group-join">Join Group</button>
+                        </div>
+                    </div>
+                    <div class="group-card">
+                        <div class="group-image">
+                            <img src="images/group4.jpg" alt="Prayer Group">
+                        </div>
+                        <div class="group-content">
+                            <div class="group-category">Prayer</div>
+                            <h3>Intercessory Prayer</h3>
+                            <p class="group-meta"><i class="fas fa-calendar"></i> Thursdays, 7:00 AM <i class="fas fa-map-marker-alt"></i> Church Campus</p>
+                            <p class="group-description">A dedicated group that meets to pray for the church, community, and world needs.</p>
+                            <div class="group-stats">
+                                <span><i class="fas fa-users"></i> 15 Members</span>
+                                <span><i class="fas fa-star"></i> 5.0/5</span>
+                            </div>
+                            <button class="group-join">Join Group</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="create-group">
+                    <h3>Don't see a group that fits your needs?</h3>
+                    <p>Start your own group and invite others to join.</p>
+                    <button class="create-group-btn">Start a New Group</button>
+                </div>
+            </section>
+
+            <!-- Prayer Requests Section -->
+            <section id="prayer" class="dashboard-section">
+                <div class="section-header">
+                    <h1>Prayer Requests</h1>
+                    <p>Submit and receive prayer support from our dedicated prayer team</p>
+                </div>
+
+                <div class="prayer-container">
+                    <div class="prayer-form-container">
+                        <h2>Submit a Prayer Request</h2>
+                        <form class="prayer-form">
+                            <div class="form-group">
+                                <label for="prayer-type">Request Type</label>
+                                <select id="prayer-type" required>
+                                    <option value="">Select a category</option>
+                                    <option value="personal">Personal</option>
+                                    <option value="family">Family</option>
+                                    <option value="health">Health & Healing</option>
+                                    <option value="financial">Financial</option>
+                                    <option value="spiritual">Spiritual Growth</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="prayer-request">Your Request</label>
+                                <textarea id="prayer-request" rows="5" placeholder="Share your prayer request here..." required></textarea>
+                            </div>
+                            <div class="form-checkbox">
+                                <input type="checkbox" id="prayer-private">
+                                <label for="prayer-private">Keep this request private (only visible to the prayer team)</label>
+                            </div>
+                            <div class="form-checkbox">
+                                <input type="checkbox" id="prayer-updates">
+                                <label for="prayer-updates">Receive email updates when people pray for your request</label>
+                            </div>
+                            <button type="submit" class="submit-prayer">Submit Request</button>
+                        </form>
+                    </div>
+
+                    <div class="prayer-list-container">
+                        <h2>Your Prayer Requests</h2>
+                        <div class="prayer-list">
+                            <div class="prayer-item">
+                                <div class="prayer-header">
+                                    <span class="prayer-category health">Health & Healing</span>
+                                    <span class="prayer-date">June 10, 2023</span>
+                                </div>
+                                <p class="prayer-text">Please pray for my mother who is undergoing surgery next week. Pray for the doctors and for a successful procedure and quick recovery.</p>
+                                <div class="prayer-stats">
+                                    <span><i class="fas fa-praying-hands"></i> 12 people praying</span>
+                                    <span class="prayer-status in-progress">In Progress</span>
+                                </div>
+                                <div class="prayer-actions">
+                                    <button class="prayer-action"><i class="fas fa-edit"></i> Edit</button>
+                                    <button class="prayer-action"><i class="fas fa-check-circle"></i> Mark as Answered</button>
+                                </div>
+                            </div>
+                            <div class="prayer-item">
+                                <div class="prayer-header">
+                                    <span class="prayer-category spiritual">Spiritual Growth</span>
+                                    <span class="prayer-date">May 28, 2023</span>
+                                </div>
+                                <p class="prayer-text">I'm seeking guidance for a major life decision. Please pray for clarity and wisdom as I discern God's will for my next steps.</p>
+                                <div class="prayer-stats">
+                                    <span><i class="fas fa-praying-hands"></i> 8 people praying</span>
+                                    <span class="prayer-status in-progress">In Progress</span>
+                                </div>
+                                <div class="prayer-actions">
+                                    <button class="prayer-action"><i class="fas fa-edit"></i> Edit</button>
+                                    <button class="prayer-action"><i class="fas fa-check-circle"></i> Mark as Answered</button>
+                                </div>
+                            </div>
+                            <div class="prayer-item">
+                                <div class="prayer-header">
+                                    <span class="prayer-category family">Family</span>
+                                    <span class="prayer-date">May 15, 2023</span>
+                                </div>
+                                <p class="prayer-text">Praise report! My son received the job offer he was hoping for. Thank you for all your prayers!</p>
+                                <div class="prayer-stats">
+                                    <span><i class="fas fa-praying-hands"></i> 15 people prayed</span>
+                                    <span class="prayer-status answered">Answered</span>
+                                </div>
+                                <div class="prayer-actions">
+                                    <button class="prayer-action"><i class="fas fa-heart"></i> Send Thanks</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Giving History Section -->
+            <section id="giving" class="dashboard-section">
+                <div class="section-header">
+                    <h1>Your Giving History</h1>
+                    <p>View your contributions and download tax statements</p>
+                </div>
+
+                <div class="giving-summary">
+                    <div class="giving-card">
+                        <h3>Year-to-Date Giving</h3>
+                        <p class="giving-amount">$1,250.00</p>
+                        <p class="giving-period">January 1 - Present</p>
+                    </div>
+                    <div class="giving-card">
+                        <h3>Last Year's Giving</h3>
+                        <p class="giving-amount">$2,875.00</p>
+                        <p class="giving-period">January - December 2022</p>
+                    </div>
+                    <div class="giving-card">
+                        <h3>Recurring Giving</h3>
+                        <p class="giving-amount">$150.00</p>
+                        <p class="giving-period">Monthly</p>
+                    </div>
+                </div>
+
+                <div class="giving-actions">
+                    <button class="giving-action-btn"><i class="fas fa-hand-holding-heart"></i> Give Now</button>
+                    <button class="giving-action-btn"><i class="fas fa-file-download"></i> Download Tax Statement</button>
+                    <button class="giving-action-btn"><i class="fas fa-cog"></i> Manage Recurring Giving</button>
+                </div>
+
+                <div class="giving-history">
+                    <h2>Recent Transactions</h2>
+                    <div class="giving-table-container">
+                        <table class="giving-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Amount</th>
+                                    <th>Fund</th>
+                                    <th>Method</th>
+                                    <th>Status</th>
+                                    <th>Receipt</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>June 4, 2023</td>
+                                    <td>$150.00</td>
+                                    <td>General Fund</td>
+                                    <td>Credit Card</td>
+                                    <td><span class="status-complete">Complete</span></td>
+                                    <td><a href="#" class="receipt-link"><i class="fas fa-download"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>May 7, 2023</td>
+                                    <td>$150.00</td>
+                                    <td>General Fund</td>
+                                    <td>Credit Card</td>
+                                    <td><span class="status-complete">Complete</span></td>
+                                    <td><a href="#" class="receipt-link"><i class="fas fa-download"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>April 2, 2023</td>
+                                    <td>$150.00</td>
+                                    <td>General Fund</td>
+                                    <td>Credit Card</td>
+                                    <td><span class="status-complete">Complete</span></td>
+                                    <td><a href="#" class="receipt-link"><i class="fas fa-download"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>March 5, 2023</td>
+                                    <td>$150.00</td>
+                                    <td>General Fund</td>
+                                    <td>Credit Card</td>
+                                    <td><span class="status-complete">Complete</span></td>
+                                    <td><a href="#" class="receipt-link"><i class="fas fa-download"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>February 5, 2023</td>
+                                    <td>$150.00</td>
+                                    <td>General Fund</td>
+                                    <td>Credit Card</td>
+                                    <td><span class="status-complete">Complete</span></td>
+                                    <td><a href="#" class="receipt-link"><i class="fas fa-download"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>January 1, 2023</td>
+                                    <td>$500.00</td>
+                                    <td>Building Fund</td>
+                                    <td>Bank Transfer</td>
+                                    <td><span class="status-complete">Complete</span></td>
+                                    <td><a href="#" class="receipt-link"><i class="fas fa-download"></i></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="pagination">
+                        <button class="pagination-btn active">1</button>
+                        <button class="pagination-btn">2</button>
+                        <button class="pagination-btn">3</button>
+                        <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Profile Settings Section -->
+            <section id="profile" class="dashboard-section">
+                <div class="section-header">
+                    <h1>Profile Settings</h1>
+                    <p>Manage your account information and preferences</p>
+                </div>
+
+                <div class="profile-container">
+                    <div class="profile-sidebar">
+                        <div class="profile-picture">
+                            <div class="profile-image">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <button class="change-photo-btn">Change Photo</button>
+                        </div>
+                        <div class="profile-menu">
+                            <button class="profile-menu-item active" data-tab="personal">Personal Information</button>
+                            <button class="profile-menu-item" data-tab="contact">Contact Details</button>
+                            <button class="profile-menu-item" data-tab="security">Security</button>
+                            <button class="profile-menu-item" data-tab="notifications">Notifications</button>
+                            <button class="profile-menu-item" data-tab="privacy">Privacy</button>
+                        </div>
+                    </div>
+
+                    <div class="profile-content">
+                        <!-- Personal Information Tab -->
+                        <div class="profile-tab active" id="personal-tab">
+                            <h2>Personal Information</h2>
+                            <form class="profile-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="first-name">First Name</label>
+                                        <input type="text" id="first-name" value="John">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="last-name">Last Name</label>
+                                        <input type="text" id="last-name" value="Doe">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="birth-date">Date of Birth</label>
+                                        <input type="date" id="birth-date">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="gender">Gender</label>
+                                        <select id="gender">
+                                            <option value="">Select</option>
+                                            <option value="male">Male</option>
+                                            <option value="female">Female</option>
+                                            <option value="other">Prefer not to say</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="bio">About Me</label>
+                                    <textarea id="bio" rows="4" placeholder="Share a little about yourself..."></textarea>
+                                </div>
+                                <button type="submit" class="save-profile-btn">Save Changes</button>
+                            </form>
+                        </div>
+
+                        <!-- Contact Details Tab -->
+                        <div class="profile-tab" id="contact-tab">
+                            <h2>Contact Details</h2>
+                            <form class="profile-form">
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" value="john.doe@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" value="(555) 123-4567">
+                                </div>
+                                <div class="form-group">
+                                    <label for="address">Address</label>
+                                    <input type="text" id="address" placeholder="Street Address">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="city">City</label>
+                                        <input type="text" id="city">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="state">State</label>
+                                        <input type="text" id="state">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="zip">ZIP Code</label>
+                                        <input type="text" id="zip">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="country">Country</label>
+                                        <input type="text" id="country" value="United States">
+                                    </div>
+                                </div>
+                                <button type="submit" class="save-profile-btn">Save Changes</button>
+                            </form>
+                        </div>
+
+                        <!-- Security Tab -->
+                        <div class="profile-tab" id="security-tab">
+                            <h2>Security</h2>
+                            <form class="profile-form">
+                                <h3>Change Password</h3>
+                                <div class="form-group">
+                                    <label for="current-password">Current Password</label>
+                                    <input type="password" id="current-password">
+                                </div>
+                                <div class="form-group">
+                                    <label for="new-password">New Password</label>
+                                    <input type="password" id="new-password">
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirm-password">Confirm New Password</label>
+                                    <input type="password" id="confirm-password">
+                                </div>
+                                <button type="submit" class="save-profile-btn">Update Password</button>
+
+                                <h3 class="mt-4">Two-Factor Authentication</h3>
+                                <div class="form-checkbox">
+                                    <input type="checkbox" id="enable-2fa">
+                                    <label for="enable-2fa">Enable two-factor authentication for added security</label>
+                                </div>
+                                <p class="help-text">Two-factor authentication adds an extra layer of security to your account by requiring a verification code in addition to your password.</p>
+                                <button type="button" class="secondary-btn">Set Up Two-Factor Authentication</button>
+
+                                <h3 class="mt-4">Login Sessions</h3>
+                                <div class="sessions-list">
+                                    <div class="session-item">
+                                        <div class="session-info">
+                                            <i class="fas fa-laptop"></i>
+                                            <div>
+                                                <h4>Windows PC - Chrome</h4>
+                                                <p>Current session • Last active: Just now</p>
+                                            </div>
+                                        </div>
+                                        <span class="session-active">Active</span>
+                                    </div>
+                                    <div class="session-item">
+                                        <div class="session-info">
+                                            <i class="fas fa-mobile-alt"></i>
+                                            <div>
+                                                <h4>iPhone - Safari</h4>
+                                                <p>Last active: 2 days ago</p>
+                                            </div>
+                                        </div>
+                                        <button class="session-logout">Log Out</button>
+                                    </div>
+                                </div>
+                                <button type="button" class="danger-btn">Log Out of All Devices</button>
+                            </form>
+                        </div>
+
+                        <!-- Notifications Tab -->
+                        <div class="profile-tab" id="notifications-tab">
+                            <h2>Notification Preferences</h2>
+                            <form class="profile-form">
+                                <h3>Email Notifications</h3>
+                                <div class="notification-group">
+                                    <div class="form-checkbox">
+                                        <input type="checkbox" id="notify-events" checked>
+                                        <label for="notify-events">Event announcements and reminders</label>
+                                    </div>
+                                    <div class="form-checkbox">
+                                        <input type="checkbox" id="notify-sermons" checked>
+                                        <label for="notify-sermons">New sermon uploads</label>
+                                    </div>
+                                    <div class="form-checkbox">
+                                        <input type="checkbox" id="notify-prayer" checked>
+                                        <label for="notify-prayer">Prayer request updates</label>
+                                    </div>
+                                    <div class="form-checkbox">
+                                        <input type="checkbox" id="notify-groups">
+                                        <label for="notify-groups">Group activity and messages</label>
+                                    </div>
+                                    <div class="form-checkbox">
+                                        <input type="checkbox" id="notify-newsletter" checked>
+                                        <label for="notify-newsletter">Church newsletter</label>
+                                    </div>
+                                </div>
+
+                                <h3 class="mt-4">Notification Frequency</h3>
+                                <div class="form-group">
+                                    <label for="notification-frequency">Email Digest Frequency</label>
+                                    <select id="notification-frequency">
+                                        <option value="immediately">Send immediately</option>
+                                        <option value="daily" selected>Daily digest</option>
+                                        <option value="weekly">Weekly digest</option>
+                                    </select>
+                                </div>
+
+                                <button type="submit" class="save-profile-btn">Save Preferences</button>
+                            </form>
+                        </div>
+
+                        <!-- Privacy Tab -->
+                        <div class="profile-tab" id="privacy-tab">
+                            <h2>Privacy Settings</h2>
+                            <form class="profile-form">
+                                <h3>Profile Visibility</h3>
+                                <div class="form-group">
+                                    <label for="profile-visibility">Who can see my profile</label>
+                                    <select id="profile-visibility">
+                                        <option value="everyone">All church members</option>
+                                        <option value="groups">Only my groups</option>
+                                        <option value="staff">Church staff only</option>
+                                    </select>
+                                </div>
+
+                                <h3 class="mt-4">Directory Listing</h3>
+                                <div class="form-checkbox">
+                                    <input type="checkbox" id="directory-listing" checked>
+                                    <label for="directory-listing">Include me in the church directory</label>
+                                </div>
+                                <p class="help-text">Your name and contact information will be visible to other church members in the directory.</p>
+
+                                <h3 class="mt-4">Prayer Requests</h3>
+                                <div class="form-group">
+                                    <label for="prayer-visibility">Default prayer request visibility</label>
+                                    <select id="prayer-visibility">
+                                        <option value="public">Public (all members can see)</option>
+                                        <option value="private" selected>Private (only prayer team can see)</option>
+                                    </select>
+                                </div>
+
+                                <h3 class="mt-4">Data Management</h3>
+                                <button type="button" class="secondary-btn">Download My Data</button>
+                                <button type="button" class="danger-btn mt-3">Delete My Account</button>
+
+                                <button type="submit" class="save-profile-btn mt-4">Save Privacy Settings</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="cart-modal" class="modal" role="dialog" aria-labelledby="cart-title" aria-hidden="true">
+        <div class="modal-content">
+            <h3 id="cart-title">Shopping Cart</h3>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-amount">GHS 0.00</span>
+            </div>
+            <div class="cart-buttons">
+                <button onclick="closeCart()" class="secondary-btn">Continue Shopping</button>
+                <button onclick="checkout()" class="primary-btn">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="db.js"></script>
+    <script src="script.js"></script>
+    <script type="module" src="dashboard.js"></script>
+</body>
+</html>

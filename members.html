@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Members Zone - Rhema Calvary Center - Access exclusive content and connect with our community">
+    <meta name="keywords" content="church, members, community, spiritual growth, Rhema Calvary Center, religious services">
+    <meta name="author" content="Rhema Calvary Center">
+    <meta property="og:title" content="Members' Zone - Rhema Calvary Center">
+    <meta property="og:description" content="Access exclusive content and connect with our community at Rhema Calvary Center">
+    <meta property="og:image" content="https://rhemacalvarycenter.com/images/hero.jpg">
+    <meta property="og:url" content="https://rhemacalvarycenter.com/members.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://rhemacalvarycenter.com/members.html">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <title>Members' Zone - Rhema Calvary Center</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="members.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body role="document">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="logo" role="banner"><img src="images/logo.png" alt="Rhema Calvary Center Church Logo">Rhema Calvary Center</div>
+        <div class="nav-links" role="menubar">
+            <a href="index.html" role="menuitem">Home</a>
+            <a href="index.html#events" role="menuitem">Events</a>
+            <a href="index.html#sermons" role="menuitem">Sermons</a>
+            <a href="store.html" role="menuitem">Store</a>
+            <a href="https://rhema.mychurchpay.com" role="menuitem" target="_blank" rel="noopener noreferrer">Giving</a>
+            <a href="index.html#about" role="menuitem">About</a>
+            <a href="index.html#contact" role="menuitem">Contact</a>
+            <a href="members.html" class="active" role="menuitem" aria-current="page">Members</a>
+        </div>
+        <div class="nav-right">
+            <div class="cart-icon" onclick="showCart()" aria-label="View shopping cart">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+            <button class="mobile-menu" aria-label="Toggle navigation menu" aria-expanded="false">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Enhanced Hero Section -->
+    <section class="members-hero">
+        <div class="members-hero-content">
+            <h1>Welcome to the Members' Zone</h1>
+            <p>Connect with our community, access exclusive resources, and grow in your faith journey</p>
+            <div class="members-auth-buttons">
+                <a href="login.html" class="auth-button login">Login</a>
+                <a href="signup.html" class="auth-button signup">Sign Up</a>
+            </div>
+        </div>
+    </section>
+    <!-- End Enhanced Hero Section -->
+
+    <section class="members-benefits">
+        <h2>Member Benefits</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-book-reader"></i>
+                </div>
+                <h3>Exclusive Content</h3>
+                <p>Access sermon archives, Bible study materials, and spiritual growth resources</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Community Groups</h3>
+                <p>Join virtual and in-person small groups based on interests, life stages, or location</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <h3>Event Registration</h3>
+                <p>Priority registration for church events, retreats, and special programs</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-praying-hands"></i>
+                </div>
+                <h3>Prayer Requests</h3>
+                <p>Submit and receive prayer support from our dedicated prayer team</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-video"></i>
+                </div>
+                <h3>Live Streams</h3>
+                <p>Access to live streams of services and special events when you can't attend in person</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-hands-helping"></i>
+                </div>
+                <h3>Volunteer Opportunities</h3>
+                <p>Find and sign up for service opportunities that match your gifts and passions</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="members-testimonials">
+        <h2>What Our Members Say</h2>
+        <div class="testimonials-slider">
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    <p>"Being part of the Rhema Calvary Center community has transformed my spiritual life. The resources and support available through the members' zone have helped me grow in my faith journey."</p>
+                    <div class="testimonial-author">
+                        <img src="images/photo_2025-03-25_07-58-25.jpg" alt="Joyful Member at All Night Service" class="testimonial-avatar">
+                        <div class="author-info">
+                            <h4>Esther A.</h4>
+                            <p>Member since 2022</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    <p>"I love the sense of community I've found through the members' zone. The small groups have connected me with like-minded believers who encourage me in my walk with Christ."</p>
+                    <div class="testimonial-author">
+                        <img src="images/photo_2025-03-25_07-59-12.jpg" alt="Smiling Member at Church Event" class="testimonial-avatar">
+                        <div class="author-info">
+                            <h4>Samuel K.</h4>
+                            <p>Member since 2021</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    <p>"As someone who travels frequently for work, the live streaming service has been a blessing. I never miss a Sunday service, even when I'm away from home."</p>
+                    <div class="testimonial-author">
+                        <img src="images/photo_2025-04-06_04-55-26.jpg" alt="Happy Member at Service" class="testimonial-avatar">
+                        <div class="author-info">
+                            <h4>Linda O.</h4>
+                            <p>Member since 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-dots"></div>
+    </section>
+
+    <section class="members-forms enhanced-members-forms">
+        <h2>Member Services</h2>
+        <p class="section-description">Use the tabs below to get involved in our church community or request services.</p>
+
+        <div class="forms-tabs" role="tablist" aria-label="Member Services Tabs">
+            <!-- Member Services Tabs - Enhanced -->
+            <button class="tab-button active" data-tab="department" role="tab" aria-selected="true" aria-controls="department-form">Join a Department</button>
+            <button class="tab-button" data-tab="counseling" role="tab" aria-selected="false" aria-controls="counseling-form">Marriage Counseling</button>
+            <button class="tab-button" data-tab="meeting" role="tab" aria-selected="false" aria-controls="meeting-form">Schedule a Meeting</button>
+            <button class="tab-button" data-tab="prayer" role="tab" aria-selected="false" aria-controls="prayer-form">Prayer Request</button>
+        </div>
+
+        <div class="forms-container">
+            <!-- Join a Department Form -->
+            <div class="form-tab active form-card" id="department-form" role="tabpanel" aria-labelledby="department-tab">
+                <div class="form-header">
+                    <h3>Join a Department</h3>
+                    <span class="form-subtitle">Serve in our church community by joining one of our ministry departments.</span>
+                </div>
+                <form class="member-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="dept-name">Full Name</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="dept-name" name="name" required placeholder="Your full name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="dept-email">Email Address</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="dept-email" name="email" required placeholder="Your email address">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="dept-phone">Phone Number</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-phone"></i>
+                                <input type="tel" id="dept-phone" name="phone" required placeholder="Your phone number">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="department">Department</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-users"></i>
+                                <select id="department" name="department" required>
+                                    <option value="">Select a department</option>
+                                    <option value="worship">Worship Team</option>
+                                    <option value="children">Children's Ministry</option>
+                                    <option value="youth">Youth Ministry</option>
+                                    <option value="hospitality">Hospitality</option>
+                                    <option value="media">Media & Technology</option>
+                                    <option value="outreach">Outreach & Missions</option>
+                                    <option value="prayer">Prayer Team</option>
+                                    <option value="usher">Ushering</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dept-experience">Previous Experience</label>
+                        <textarea id="dept-experience" name="experience" rows="3" placeholder="Briefly describe any previous experience you have in this area"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dept-availability">Availability</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="sunday-morning" name="availability[]" value="sunday-morning">
+                                <label for="sunday-morning">Sunday Morning</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="sunday-evening" name="availability[]" value="sunday-evening">
+                                <label for="sunday-evening">Sunday Evening</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="weekday-evening" name="availability[]" value="weekday-evening">
+                                <label for="weekday-evening">Weekday Evenings</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="saturday" name="availability[]" value="saturday">
+                                <label for="saturday">Saturday</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="form-submit-btn">Submit Application</button>
+                </form>
+            </div>
+
+            <!-- Marriage Counseling Form -->
+            <div class="form-tab form-card" id="counseling-form" role="tabpanel" aria-labelledby="counseling-tab">
+                <div class="form-header">
+                    <h3>Marriage Counseling Request</h3>
+                    <span class="form-subtitle">Request marriage counseling sessions with our pastoral team.</span>
+                </div>
+                <form class="member-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="counsel-name1">Your Name</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="counsel-name1" name="name1" required placeholder="Your full name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="counsel-name2">Spouse's Name</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="counsel-name2" name="name2" required placeholder="Your spouse's full name">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="counsel-email">Email Address</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="counsel-email" name="email" required placeholder="Your email address">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="counsel-phone">Phone Number</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-phone"></i>
+                                <input type="tel" id="counsel-phone" name="phone" required placeholder="Your phone number">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="counsel-status">Relationship Status</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-heart"></i>
+                            <select id="counsel-status" name="status" required>
+                                <option value="">Select your status</option>
+                                <option value="engaged">Engaged</option>
+                                <option value="newlywed">Newlywed (0-2 years)</option>
+                                <option value="married">Married (3+ years)</option>
+                                <option value="struggling">Marriage in difficulty</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="counsel-reason">Reason for Counseling</label>
+                        <textarea id="counsel-reason" name="reason" rows="3" required placeholder="Please briefly describe why you're seeking counseling"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Preferred Days</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="monday" name="days[]" value="monday">
+                                <label for="monday">Monday</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="tuesday" name="days[]" value="tuesday">
+                                <label for="tuesday">Tuesday</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="wednesday" name="days[]" value="wednesday">
+                                <label for="wednesday">Wednesday</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="thursday" name="days[]" value="thursday">
+                                <label for="thursday">Thursday</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="friday" name="days[]" value="friday">
+                                <label for="friday">Friday</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Preferred Time</label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="morning" name="time" value="morning">
+                                <label for="morning">Morning (9AM-12PM)</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="afternoon" name="time" value="afternoon">
+                                <label for="afternoon">Afternoon (1PM-5PM)</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="evening" name="time" value="evening">
+                                <label for="evening">Evening (6PM-8PM)</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="form-submit-btn">Request Counseling</button>
+                </form>
+            </div>
+
+            <!-- Schedule a Meeting Form -->
+            <div class="form-tab form-card" id="meeting-form" role="tabpanel" aria-labelledby="meeting-tab">
+                <div class="form-header">
+                    <h3>Schedule a Meeting with Pastor</h3>
+                    <span class="form-subtitle">Request a one-on-one meeting with one of our pastoral staff members.</span>
+                </div>
+                <form class="member-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="meeting-name">Full Name</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="meeting-name" name="name" required placeholder="Your full name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="meeting-email">Email Address</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="meeting-email" name="email" required placeholder="Your email address">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="meeting-phone">Phone Number</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-phone"></i>
+                                <input type="tel" id="meeting-phone" name="phone" required placeholder="Your phone number">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="meeting-pastor">Preferred Pastor</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-user-tie"></i>
+                                <select id="meeting-pastor" name="pastor" required>
+                                    <option value="">Select a pastor</option>
+                                    <option value="senior">Senior Pastor</option>
+                                    <option value="associate">Associate Pastor</option>
+                                    <option value="youth">Youth Pastor</option>
+                                    <option value="any">Any Available Pastor</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="meeting-topic">Meeting Topic</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-comment"></i>
+                            <select id="meeting-topic" name="topic" required>
+                                <option value="">Select a topic</option>
+                                <option value="spiritual">Spiritual Guidance</option>
+                                <option value="personal">Personal Issue</option>
+                                <option value="family">Family Matter</option>
+                                <option value="baptism">Baptism</option>
+                                <option value="membership">Church Membership</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="meeting-details">Additional Details</label>
+                        <textarea id="meeting-details" name="details" rows="3" placeholder="Please provide any additional details about your meeting request"></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="meeting-date">Preferred Date</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-calendar"></i>
+                                <input type="date" id="meeting-date" name="date" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="meeting-time">Preferred Time</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-clock"></i>
+                                <select id="meeting-time" name="time" required>
+                                    <option value="">Select a time</option>
+                                    <option value="9am">9:00 AM</option>
+                                    <option value="10am">10:00 AM</option>
+                                    <option value="11am">11:00 AM</option>
+                                    <option value="1pm">1:00 PM</option>
+                                    <option value="2pm">2:00 PM</option>
+                                    <option value="3pm">3:00 PM</option>
+                                    <option value="4pm">4:00 PM</option>
+                                    <option value="5pm">5:00 PM</option>
+                                    <option value="6pm">6:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Meeting Type</label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="in-person" name="meeting-type" value="in-person" checked>
+                                <label for="in-person">In-Person</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="virtual" name="meeting-type" value="virtual">
+                                <label for="virtual">Virtual (Zoom)</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="phone-call" name="meeting-type" value="phone">
+                                <label for="phone-call">Phone Call</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="form-submit-btn">Request Meeting</button>
+                </form>
+            </div>
+
+            <!-- Prayer Request Form -->
+            <div class="form-tab form-card" id="prayer-form" role="tabpanel" aria-labelledby="prayer-tab">
+                <div class="form-header">
+                    <h3>Submit a Prayer Request</h3>
+                    <span class="form-subtitle">Share your prayer needs with our prayer team.</span>
+                </div>
+                <form class="member-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="prayer-name">Your Name</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="prayer-name" name="name" required placeholder="Your full name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="prayer-email">Email Address</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="prayer-email" name="email" required placeholder="Your email address">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prayer-request">Prayer Request</label>
+                        <textarea id="prayer-request" name="request" rows="5" required placeholder="Please share your prayer request"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prayer-category">Category</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-tag"></i>
+                            <select id="prayer-category" name="category">
+                                <option value="">Select a category (optional)</option>
+                                <option value="health">Health & Healing</option>
+                                <option value="family">Family</option>
+                                <option value="financial">Financial</option>
+                                <option value="spiritual">Spiritual Growth</option>
+                                <option value="guidance">Guidance & Direction</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="prayer-urgent" name="urgent" value="yes">
+                            <label for="prayer-urgent">This is an urgent prayer request</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="prayer-private" name="private" value="yes">
+                            <label for="prayer-private">Keep this request private (only pastoral staff will see it)</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="prayer-updates" name="updates" value="yes" checked>
+                            <label for="prayer-updates">I would like to receive updates on this prayer request</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="form-submit-btn">Submit Prayer Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="members-faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How do I become a member?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>To become a member, simply click the "Sign Up" button above and complete the registration form. After submitting your information, you'll receive a confirmation email with further instructions.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Is there a fee to join?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>No, membership is completely free for all regular attendees of Rhema Calvary Center.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What if I forget my password?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>If you forget your password, simply click the "Forgot Password" link on the login page. You'll receive an email with instructions to reset your password.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Can I update my personal information?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, once logged in, you can update your personal information, communication preferences, and privacy settings from your profile page.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How do I join a small group?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>After logging in, navigate to the "Groups" section where you can browse available small groups based on interests, location, or meeting times. Click "Join Group" to request membership.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Join Our Community?</h2>
+            <p>Create your account today and start enjoying all the benefits of membership.</p>
+            <div class="cta-buttons">
+                <a href="signup.html" class="cta-button primary">Sign Up Now</a>
+                <a href="login.html" class="cta-button secondary">Already a Member? Log In</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-envelope"></i> Email: <a href="mailto:info@rhemacalvarycenter.com">info@rhemacalvarycenter.com</a></p>
+                <p><i class="fas fa-phone"></i> Phone: <a href="tel:+233246643300">024 664 3300</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> Address: MPQH+45R, High Tension, Pokuase - Kwabenya, Road, Kwabenya</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <div class="social-links">
+                    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                    <a href="index.html#events"><i class="fas fa-calendar-alt"></i> Events</a>
+                    <a href="index.html#sermons"><i class="fas fa-book-open"></i> Sermons</a>
+                    <a href="store.html"><i class="fas fa-shopping-bag"></i> Store</a>
+                    <a href="members.html"><i class="fas fa-users"></i> Members</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Service Times</h3>
+                <p><i class="fas fa-church"></i> Sunday: 10:00 AM & 6:00 PM</p>
+                <p><i class="fas fa-bible"></i> Wednesday Bible Study: 7:00 PM</p>
+                <p><i class="fas fa-pray"></i> Friday Prayer Meeting: 6:30 PM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Rhema Calvary Center. All rights reserved. <a href="admin.html" class="admin-link" style="color: inherit; text-decoration: none; opacity: 0.8; margin-left: 10px; font-size: 0.9em;">Admin</a></p>
+        </div>
+    </footer>
+
+    <div id="cart-modal" class="modal" role="dialog" aria-labelledby="cart-title" aria-hidden="true">
+        <div class="modal-content">
+            <h3 id="cart-title">Shopping Cart</h3>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-amount">GHS 0.00</span>
+            </div>
+            <div class="cart-buttons">
+                <button onclick="closeCart()" class="secondary-btn">Continue Shopping</button>
+                <button onclick="checkout()" class="primary-btn">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="db.js"></script>
+    <script type="module" src="script.js"></script>
+    <script type="module" src="members.js"></script>
+</body>
+</html>

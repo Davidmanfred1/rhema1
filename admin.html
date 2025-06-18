@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Rhema Calvary Center</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="admin-login">
+    <div class="admin-login-container">
+        <div class="login-box">
+            <div class="login-header">
+                <img src="images/logo.png" alt="Rhema Calvary Center Logo" class="admin-logo">
+                <h1>Admin Login</h1>
+            </div>
+            <form id="adminLoginForm" onsubmit="return handleAdminLogin(event)">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="username" name="username" placeholder="Username" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                </div>
+                <div id="loginMessage" class="message-box"></div>
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+            <div class="back-to-site">
+                <a href="index.html"><i class="fas fa-arrow-left"></i> Back to Website</a>
+            </div>
+        </div>
+    </div>
+    <script src="db.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

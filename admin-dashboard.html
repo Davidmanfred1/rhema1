@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Rhema Calvary Center</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="admin-dashboard">
+    <nav class="admin-nav">
+        <div class="admin-logo">
+            <img src="images/logo.png" alt="Rhema Calvary Center Logo">
+            <span>Admin Dashboard</span>
+        </div>
+        <div class="admin-menu">
+            <a href="#" class="active" data-section="products"><i class="fas fa-book"></i> Products</a>
+            <a href="#" data-section="orders"><i class="fas fa-shopping-cart"></i> Orders</a>
+            <a href="#" data-section="analytics"><i class="fas fa-chart-bar"></i> Analytics</a>
+            <a href="#" data-section="settings"><i class="fas fa-cog"></i> Settings</a>
+        </div>
+        <div class="admin-profile">
+            <span id="adminName">Admin</span>
+            <button onclick="logout()" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </div>
+    </nav>
+
+    <main class="admin-content">
+        <section id="products" class="admin-section active">
+            <div class="section-header">
+                <h2>Product Management</h2>
+                <button class="add-btn" onclick="showAddProductModal()"><i class="fas fa-plus"></i> Add Product</button>
+            </div>
+            <div class="product-grid">
+                <!-- Product items will be dynamically loaded here -->
+            </div>
+        </section>
+
+        <section id="orders" class="admin-section">
+            <div class="section-header">
+                <h2>Order Management</h2>
+                <div class="order-filters">
+                    <div class="filter-group">
+                        <input type="text" id="orderSearch" placeholder="Search orders...">
+                        <select id="orderStatus">
+                            <option value="all">All Orders</option>
+                            <option value="pending">Pending</option>
+                            <option value="processing">Processing</option>
+                            <option value="completed">Completed</option>
+                            <option value="cancelled">Cancelled</option>
+                        </select>
+                        <select id="paymentStatus">
+                            <option value="all">All Payments</option>
+                            <option value="pending">Pending</option>
+                            <option value="verified">Verified</option>
+                        </select>
+                        <select id="orderDateRange">
+                            <option value="">All Time</option>
+                            <option value="today">Today</option>
+                            <option value="week">Last 7 Days</option>
+                            <option value="month">Last 30 Days</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="order-list">
+                <!-- Order items will be dynamically loaded here -->
+            </div>
+        </section>
+
+        <section id="analytics" class="admin-section">
+            <div class="section-header">
+                <h2>Analytics</h2>
+                <div class="date-range">
+                    <input type="date" id="startDate">
+                    <input type="date" id="endDate">
+                    <button onclick="updateAnalytics()">Update</button>
+                </div>
+            </div>
+            <div class="analytics-grid">
+                <div class="analytics-card">
+                    <h3>Total Sales</h3>
+                    <p id="totalSales">GHS 0.00</p>
+                </div>
+                <div class="analytics-card">
+                    <h3>Orders</h3>
+                    <p id="totalOrders">0</p>
+                </div>
+                <div class="analytics-card">
+                    <h3>Products Sold</h3>
+                    <p id="productsSold">0</p>
+                </div>
+            </div>
+            <div class="analytics-charts">
+                <canvas id="salesChart"></canvas>
+                <canvas id="productsChart"></canvas>
+            </div>
+        </section>
+
+        <section id="settings" class="admin-section">
+            <div class="section-header">
+                <h2>Settings</h2>
+            </div>
+            <div class="settings-grid">
+                <div class="settings-card">
+                    <h3>Account Settings</h3>
+                    <form id="accountSettingsForm">
+                        <div class="input-group">
+                            <label for="adminUsername">Username</label>
+                            <input type="text" id="adminUsername" name="username">
+                        </div>
+                        <div class="input-group">
+                            <label for="adminEmail">Email</label>
+                            <input type="email" id="adminEmail" name="email">
+                        </div>
+                        <div class="input-group">
+                            <label for="adminPassword">New Password</label>
+                            <input type="password" id="adminPassword" name="password">
+                        </div>
+                        <button type="submit">Save Changes</button>
+                    </form>
+                </div>
+                <div class="settings-card">
+                    <h3>Store Settings</h3>
+                    <form id="storeSettingsForm">
+                        <div class="input-group">
+                            <label for="storeCurrency">Currency</label>
+                            <input type="text" id="storeCurrency" value="GHS" disabled>
+                        </div>
+                        <div class="input-group">
+                            <label for="taxRate">Tax Rate (%)</label>
+                            <input type="number" id="taxRate" name="taxRate" min="0" max="100">
+                        </div>
+                        <button type="submit">Save Changes</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Add/Edit Product Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <h3 id="modalTitle">Add Product</h3>
+            <form id="productForm">
+                <div class="input-group">
+                    <label for="productTitle">Title</label>
+                    <input type="text" id="productTitle" name="title" required>
+                </div>
+                <div class="input-group">
+                    <label for="productAuthor">Author</label>
+                    <input type="text" id="productAuthor" name="author" required>
+                </div>
+                <div class="input-group">
+                    <label for="productDescription">Description</label>
+                    <textarea id="productDescription" name="description" required></textarea>
+                </div>
+                <div class="input-group">
+                    <label for="productPrice">Price (GHS)</label>
+                    <input type="number" id="productPrice" name="price" step="0.01" required>
+                </div>
+                <div class="input-group">
+                    <label for="productCategory">Category</label>
+                    <select id="productCategory" name="category" required>
+                        <option value="devotional">Devotional</option>
+                        <option value="theology">Theology</option>
+                        <option value="christian-living">Christian Living</option>
+                        <option value="bible-study">Bible Study</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="productImage">Image</label>
+                    <input type="file" id="productImage" name="image" accept="image/*">
+                </div>
+                <input type="hidden" id="productId" name="productId">
+                <div class="modal-buttons">
+                    <button type="button" onclick="closeProductModal()" class="secondary-btn">Cancel</button>
+                    <button type="submit" class="primary-btn">Save Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="db.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
